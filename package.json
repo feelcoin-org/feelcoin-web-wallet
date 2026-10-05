@@ -25,7 +25,7 @@
     "type": "git",
     "url": "https://github.com/feelcoin-org/feelcoin-web-wallet.git"
   },
-  "homepage": "https://wallet.feelcoin.online",
+  "homepage": "https://wallet.feelcoin.org",
   "bugs": {
     "url": "https://github.com/feelcoin-org/feelcoin-web-wallet/issues"
   }

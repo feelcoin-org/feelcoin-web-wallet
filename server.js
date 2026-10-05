@@ -118,7 +118,7 @@ const FEELCOIN_ALLOWED_ORIGINS =
   new Set(
     String(
       process.env.FEELCOIN_ALLOWED_ORIGINS ||
-      "https://wallet.feelcoin.online,https://wallet.feelcoin.org,http://127.0.0.1:8084,http://localhost:8084"
+      "https://wallet.feelcoin.org,http://127.0.0.1:8084,http://localhost:8084"
     )
       .split(",")
       .map(value => value.trim())
