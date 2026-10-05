@@ -449,3 +449,197 @@ footer{
     flex:1 1 100%;
   }
 }
+
+
+/* =========================================================
+   FEELCOIN WEB WALLET — FULL GLASS THEME
+   ========================================================= */
+
+header{
+  padding:16px 20px 18px !important;
+
+  background:rgba(13,20,34,.68);
+
+  border:1px solid rgba(255,255,255,.075);
+  border-radius:18px;
+
+  backdrop-filter:blur(16px) saturate(115%);
+  -webkit-backdrop-filter:blur(16px) saturate(115%);
+
+  box-shadow:
+    0 10px 35px rgba(0,0,0,.18),
+    inset 0 1px 0 rgba(255,255,255,.03);
+}
+
+
+.card,
+.stat{
+  background:
+    linear-gradient(
+      180deg,
+      rgba(17,26,43,.68),
+      rgba(10,17,30,.60)
+    ) !important;
+
+  border:1px solid rgba(255,255,255,.075) !important;
+
+  backdrop-filter:blur(14px) saturate(110%);
+  -webkit-backdrop-filter:blur(14px) saturate(110%);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.16),
+    inset 0 1px 0 rgba(255,255,255,.025);
+}
+
+
+input,
+textarea{
+  background:rgba(8,16,29,.56) !important;
+
+  border:
+    1px solid
+    rgba(255,255,255,.085) !important;
+
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255,255,255,.02);
+}
+
+
+input:focus,
+textarea:focus{
+  border-color:
+    rgba(243,199,94,.65) !important;
+
+  box-shadow:
+    0 0 0 2px
+    rgba(243,199,94,.07);
+}
+
+
+.address,
+.seed{
+  background:
+    rgba(8,16,29,.54) !important;
+
+  border:
+    1px solid
+    rgba(255,255,255,.055);
+
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+
+
+.modal{
+  background:
+    rgba(2,5,10,.66) !important;
+
+  backdrop-filter:blur(9px);
+  -webkit-backdrop-filter:blur(9px);
+}
+
+
+.modal-card{
+  background:
+    linear-gradient(
+      180deg,
+      rgba(17,26,43,.86),
+      rgba(10,17,30,.82)
+    ) !important;
+
+  border:
+    1px solid
+    rgba(255,255,255,.08) !important;
+
+  backdrop-filter:blur(18px) saturate(115%);
+  -webkit-backdrop-filter:blur(18px) saturate(115%);
+
+  box-shadow:
+    0 20px 60px
+    rgba(0,0,0,.35);
+}
+
+
+.tab,
+.restore-tab{
+  background:
+    rgba(17,29,43,.60) !important;
+
+  backdrop-filter:blur(9px);
+  -webkit-backdrop-filter:blur(9px);
+}
+
+
+.tab.active,
+.restore-tab.active{
+  background:
+    linear-gradient(
+      135deg,
+      #f3c75e,
+      #d59b2d
+    ) !important;
+}
+
+
+button.secondary{
+  background:
+    rgba(34,42,55,.65) !important;
+
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+
+
+button.ghost{
+  background:
+    rgba(8,16,29,.32) !important;
+
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+
+
+.ecosystem-nav a{
+  background:
+    rgba(13,20,34,.52) !important;
+
+  backdrop-filter:
+    blur(10px) saturate(110%);
+
+  -webkit-backdrop-filter:
+    blur(10px) saturate(110%);
+}
+
+
+footer{
+  margin-top:30px;
+  padding:18px 20px !important;
+
+  background:
+    rgba(8,14,24,.30);
+
+  border:
+    1px solid
+    rgba(255,255,255,.04);
+
+  border-radius:14px;
+
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+
+
+/* Preserve QR readability */
+.qr{
+  background:white !important;
+}
+
+
+/* =========================================================
+   END FEELCOIN WEB WALLET — FULL GLASS THEME
+   ========================================================= */
+
