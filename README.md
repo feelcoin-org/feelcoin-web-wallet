@@ -118,3 +118,9 @@ or production credentials.
 ---
 
 **Feelcoin — In Feels We Trust**
+
+## Contact
+
+Official Feelcoin support and project contact:
+
+**support@feelcoin.org**
