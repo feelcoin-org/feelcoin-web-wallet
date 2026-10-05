@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+
+# Environment / credentials
+.env
+.env.*
+!.env.example
+
+# Wallet/key material
+wallet/
+wallets/
+*.wallet
+*.keys
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Logs/runtime
+*.log
+*.pid
+logs/
+tmp/
+temp/
+
+# Development/test artifacts
+final-backups/
+noncustodial-test.html
+*.before-*
+*before-*
+*.backup
+*.backup-*
+*.bak
+*.old
+*~
+
+# Local editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Test / coverage
+coverage/
+.nyc_output/
+.cache/

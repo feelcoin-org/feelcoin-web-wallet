@@ -1,0 +1,42 @@
+name: Bug report
+description: Report a reproducible Feelcoin browser-wallet problem
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Never post a recovery seed, private key, password, or exported wallet vault.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Describe the steps without including wallet secrets.
+    validations:
+      required: true
+
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and version
+
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant console output
+      description: Remove all sensitive information before posting.

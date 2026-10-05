@@ -1,0 +1,32 @@
+{
+  "name": "feelcoin-web-wallet",
+  "version": "1.0.0",
+  "description": "Official non-custodial browser wallet for Feelcoin",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run check",
+    "start": "node server.js",
+    "check": "node --check server.js && node --check public/app.js && node --check public/scanner.js && node --check public/dashboard.js && node --check public/send.js && node --check public/core-capture.js && node --check public/network-config.js"
+  },
+  "keywords": [],
+  "author": "feelcoin-dev",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "helmet": "^8.3.0",
+    "qrcode": "^1.5.4"
+  },
+  "type": "module",
+  "devDependencies": {
+    "browserify": "^17.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/feelcoin-org/feelcoin-web-wallet.git"
+  },
+  "homepage": "https://wallet.feelcoin.online",
+  "bugs": {
+    "url": "https://github.com/feelcoin-org/feelcoin-web-wallet/issues"
+  }
+}

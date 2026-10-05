@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1"
+>
+
+<title>Feelcoin Wallet</title>
+
+<link
+  rel="stylesheet"
+  href="/style.css"
+>
+
+<link rel="icon" type="image/webp" href="/assets/feelcoin-coin.webp">
+<link rel="apple-touch-icon" href="/assets/feelcoin-coin.webp">
+
+
+<style id="feelcoin-community-theme">
+html, body {
+    min-height: 100%;
+}
+
+body {
+    background:
+        linear-gradient(
+            rgba(5, 8, 14, .82),
+            rgba(5, 8, 14, .90)
+        ),
+        url("/assets/feelcoin-community.webp")
+        center center / cover fixed no-repeat !important;
+}
+
+.card,
+.panel,
+.wallet-card,
+section,
+form,
+.modal-content {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+@media (max-width: 720px) {
+    body {
+        background-attachment: scroll !important;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="shell">
+
+<header>
+
+<div class="brand">
+
+<img
+  src="/assets/feelcoin-coin.webp"
+  class="logo"
+  alt="Feelcoin"
+/>
+
+<div>
+<h1>Feelcoin Wallet</h1>
+<p>In Feels We Trust</p>
+</div>
+
+</div>
+
+<div
+  id="network"
+  class="network"
+>
+Checking network...
+</div>
+
+</header>
+
+
+<main>
+
+<section
+  id="loginView"
+  class="welcome"
+>
+
+<div class="hero">
+
+<h2>
+Your FEEL. Your wallet.
+</h2>
+
+<p>
+Create, open or restore your Feelcoin wallet.
+</p>
+
+</div>
+
+
+<div class="auth-tabs">
+
+<button
+  class="tab active"
+  data-tab="create"
+>
+Create
+</button>
+
+<button
+  class="tab"
+  data-tab="open"
+>
+Open
+</button>
+
+<button
+  class="tab"
+  data-tab="restore"
+>
+Restore
+</button>
+
+</div>
+
+
+<div
+  id="createPanel"
+  class="auth-panel"
+>
+
+<div class="card">
+
+<h3>Create New Wallet</h3>
+
+<label>Wallet name</label>
+
+<input
+  id="createName"
+  placeholder="my-wallet"
+/>
+
+<label>Password</label>
+
+<input
+  id="createPassword"
+  type="password"
+  placeholder="Minimum 8 characters"
+/>
+
+<button id="createButton">
+Create Wallet
+</button>
+
+</div>
+
+</div>
+
+
+<div
+  id="openPanel"
+  class="auth-panel hidden"
+>
+
+<div class="card">
+
+<h3>Open Existing Wallet</h3>
+
+<label>Wallet name</label>
+
+<input
+  id="openName"
+  placeholder="my-wallet"
+/>
+
+<label>Password</label>
+
+<input
+  id="openPassword"
+  type="password"
+/>
+
+<button id="openButton">
+Open Wallet
+</button>
+
+</div>
+
+</div>
+
+
+<div
+  id="restorePanel"
+  class="auth-panel hidden"
+>
+
+<div class="restore-tabs">
+
+<button
+  class="restore-tab active"
+  data-restore="seed"
+>
+Recovery Seed
+</button>
+
+<button
+  class="restore-tab"
+  data-restore="keys"
+>
+Private Keys
+</button>
+
+<button
+  class="restore-tab"
+  data-restore="view"
+>
+View Only
+</button>
+
+</div>
+
+
+<div
+  id="seedRestore"
+  class="card restore-pane"
+>
+
+<h3>Restore from Recovery Seed</h3>
+
+<label>Wallet name</label>
+<input id="restoreSeedName">
+
+<label>New password</label>
+<input
+  id="restoreSeedPassword"
+  type="password"
+>
+
+<label>Recovery seed</label>
+<textarea
+  id="restoreSeedWords"
+  rows="5"
+  placeholder="Enter your recovery seed"
+></textarea>
+
+<label>Restore height</label>
+<input
+  id="restoreSeedHeight"
+  type="number"
+  min="0"
+  value="0"
+>
+
+<button id="restoreSeedButton">
+Restore Wallet
+</button>
+
+</div>
+
+
+<div
+  id="keyRestore"
+  class="card restore-pane hidden"
+>
+
+<h3>Restore from Private Keys</h3>
+
+<label>Wallet name</label>
+<input id="restoreKeyName">
+
+<label>New password</label>
+<input
+  id="restoreKeyPassword"
+  type="password"
+>
+
+<label>Primary address</label>
+<textarea
+  id="restoreKeyAddress"
+  rows="3"
+></textarea>
+
+<label>Private spend key</label>
+<input
+  id="restoreSpendKey"
+  type="password"
+>
+
+<label>Private view key</label>
+<input
+  id="restoreViewKey"
+  type="password"
+>
+
+<label>Restore height</label>
+<input
+  id="restoreKeyHeight"
+  type="number"
+  min="0"
+  value="0"
+>
+
+<button id="restoreKeysButton">
+Restore Wallet
+</button>
+
+</div>
+
+
+<div
+  id="viewRestore"
+  class="card restore-pane hidden"
+>
+
+<h3>Create View-Only Wallet</h3>
+
+<label>Wallet name</label>
+<input id="restoreViewName">
+
+<label>New password</label>
+<input
+  id="restoreViewPassword"
+  type="password"
+>
+
+<label>Primary address</label>
+<textarea
+  id="restoreViewAddress"
+  rows="3"
+></textarea>
+
+<label>Private view key</label>
+<input
+  id="restoreOnlyViewKey"
+  type="password"
+>
+
+<label>Restore height</label>
+<input
+  id="restoreViewHeight"
+  type="number"
+  min="0"
+  value="0"
+>
+
+<button id="restoreViewButton">
+Create View-Only Wallet
+</button>
+
+</div>
+
+</div>
+
+
+<div
+  id="authMessage"
+  class="message"
+></div>
+
+</section>
+
+
+<section
+  id="walletView"
+  class="hidden"
+>
+
+<div class="wallet-head">
+
+<div>
+<div class="eyebrow">WALLET</div>
+<h2 id="walletName">-</h2>
+</div>
+
+<button
+  id="closeButton"
+  class="ghost"
+>
+Close Wallet
+</button>
+
+</div>
+
+
+<div class="stats">
+
+<div class="stat">
+<span>Total Balance</span>
+<strong id="balance">0 FEEL</strong>
+</div>
+
+<div class="stat">
+<span>Unlocked</span>
+<strong id="unlocked">0 FEEL</strong>
+</div>
+
+<div class="stat">
+<span>Wallet Height</span>
+<strong id="height">-</strong>
+</div>
+
+</div>
+
+
+<div class="wallet-grid">
+
+<div class="card receive-card">
+
+<h3>Receive FEEL</h3>
+
+<img
+  id="qr"
+  class="qr"
+  alt="Wallet QR code"
+/>
+
+<div
+  id="address"
+  class="address"
+>
+-
+</div>
+
+<button
+  id="copyAddress"
+  class="secondary"
+>
+Copy Address
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>Send FEEL</h3>
+
+<label>Destination Address</label>
+
+<textarea
+  id="sendAddress"
+  rows="3"
+></textarea>
+
+<label>Amount</label>
+
+<input
+  id="sendAmount"
+  type="number"
+  step="0.000000000001"
+  min="0"
+/>
+
+<button id="sendButton">
+Send FEEL
+</button>
+
+<div
+  id="sendMessage"
+  class="message"
+></div>
+
+</div>
+
+</div>
+
+
+<div class="card history">
+
+<div class="history-head">
+
+<h3>Transactions</h3>
+
+<button
+  id="refreshButton"
+  class="ghost"
+>
+Refresh
+</button>
+
+</div>
+
+<div
+  id="transactions"
+  class="transactions"
+>
+No transactions yet.
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+Feelcoin Web Wallet Beta
+</footer>
+
+</div>
+
+
+<div
+  id="seedModal"
+  class="modal hidden"
+>
+
+<div class="modal-card">
+
+<h2>
+Back up your recovery seed
+</h2>
+
+<p>
+Anyone with this seed can control your wallet.
+Store it securely.
+</p>
+
+<div
+  id="seedText"
+  class="seed"
+></div>
+
+<button id="seedDone">
+I saved my seed
+</button>
+
+</div>
+
+</div>
+
+
+
+<script src="/wasm/MyMoneroCoreCpp_WASM.js"></script>
+<script src="/core-capture.js"></script>
+<script src="/network-config.js"></script>
+<script src="/scanner.js"></script>
+<script src="/vendor/qrcode.bundle.js"></script>
+<script src="/app.js"></script>
+<script src="/dashboard.js"></script>
+<script src="/send.js"></script>
+
+</body>
+</html>
