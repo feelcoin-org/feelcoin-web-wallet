@@ -643,3 +643,14 @@ footer{
    END FEELCOIN WEB WALLET — FULL GLASS THEME
    ========================================================= */
 
+
+/* ===== WALLET BRAND HOME LINK ===== */
+a.brand{
+  text-decoration:none;
+  color:inherit;
+  cursor:pointer;
+}
+
+a.brand:hover{
+  color:inherit;
+}
