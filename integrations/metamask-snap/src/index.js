@@ -1,12 +1,10 @@
 /**
- * Feelcoin MetaMask Snap proof-of-concept handler.
- * Read-only public network information only.
- * Not a complete Snap bundle: package/manifest and extension tests are pending.
+ * Feelcoin Snap: read-only development entry point.
+ * Never accepts wallet secrets and does not sign or broadcast transactions.
  */
-
 const API = 'https://api.feelcoin.org/v1/network';
 
-export const onRpcRequest = async ({ request }) => {
+module.exports.onRpcRequest = async ({ request }) => {
   switch (request.method) {
     case 'feelcoin_getCapabilities':
       return {
@@ -19,15 +17,12 @@ export const onRpcRequest = async ({ request }) => {
       };
     case 'feelcoin_getNetworkStatus': {
       const response = await fetch(API, { method: 'GET' });
-      if (!response.ok) {
-        throw new Error('Feelcoin network status unavailable');
-      }
+      if (!response.ok) throw new Error('Feelcoin network status unavailable');
       const result = await response.json();
-      // Do not forward arbitrary remote content to the caller.
       return {
-        height: result.height ?? null,
-        difficulty: result.difficulty ?? null,
-        networkHashrate: result.network_hashrate ?? null,
+        height: typeof result.height === 'number' ? result.height : null,
+        difficulty: typeof result.difficulty === 'number' ? result.difficulty : null,
+        networkHashrate: typeof result.network_hashrate === 'number' ? result.network_hashrate : null,
       };
     }
     default:
