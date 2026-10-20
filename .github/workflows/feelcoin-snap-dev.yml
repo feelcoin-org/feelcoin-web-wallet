@@ -1,0 +1,25 @@
+name: Feelcoin Snap experimental checks
+on:
+  push:
+    branches:
+      - feature/native-feel-metamask-snap-poc
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  snap-check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: integrations/metamask-snap
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install development dependencies
+        run: npm install --no-audit --no-fund
+      - name: Run read-only RPC unit tests
+        run: npm test
+      - name: Build Snap and evaluate SES compatibility
+        run: npm run build
