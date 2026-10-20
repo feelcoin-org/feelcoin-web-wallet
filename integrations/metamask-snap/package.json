@@ -1,0 +1,19 @@
+{
+  "name": "feelcoin-native-snap-poc",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Experimental read-only Feelcoin MetaMask Snap",
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/feelcoin-org/feelcoin-web-wallet.git"
+  },
+  "scripts": {
+    "build": "mm-snap build",
+    "serve": "mm-snap serve",
+    "test": "node --test tests/*.test.cjs"
+  },
+  "devDependencies": {
+    "@metamask/snaps-cli": "^7.0.0"
+  }
+}
