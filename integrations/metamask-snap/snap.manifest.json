@@ -1,0 +1,27 @@
+{
+  "version": "0.1.0",
+  "proposedName": "Feelcoin",
+  "description": "Experimental read-only Feelcoin network monitor; no wallet access.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/feelcoin-org/feelcoin-web-wallet.git"
+  },
+  "source": {
+    "shasum": "",
+    "location": {
+      "npm": {
+        "filePath": "dist/bundle.js",
+        "packageName": "feelcoin-native-snap-poc",
+        "registry": "https://registry.npmjs.org/"
+      }
+    }
+  },
+  "initialPermissions": {
+    "endowment:rpc": {
+      "dapps": true,
+      "snaps": false
+    },
+    "endowment:network-access": {}
+  },
+  "manifestVersion": "0.1"
+}
